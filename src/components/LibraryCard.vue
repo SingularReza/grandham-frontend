@@ -1,6 +1,6 @@
 <template>
   <div class="library-card">
-      <div class="library" v-if="showForm==1||id>0">
+      <div class="library" v-if="showForm==1||id>0" @click="goToLibrary">
         {{name}}
         {{type}}
       </div>
@@ -44,13 +44,14 @@ export default {
       })
       this.showForm = 2
     },
-    goToLibrary (libraryData) {
+    goToLibrary () {
+      console.log('clicked')
       this.$router.push({
         name: 'Items',
         params: {
-          id: libraryData.id,
-          type: libraryData.type,
-          range: libraryData.range[0]
+          id: this.id,
+          type: this.type,
+          range: 30
         }
       })
     }

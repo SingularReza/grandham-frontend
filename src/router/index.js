@@ -8,14 +8,14 @@ const routes = [
     component: Libraries
   },
   {
-    path: '/about',
-    name: 'About',
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  },
-  {
     path: '/library/:type/:id/:range',
     name: 'Items',
     component: () => import(/* webpackChunkName: "about" */ '../views/Items.vue')
+  },
+  {
+    path: '/item/:type/:id',
+    name: 'ItemInfo',
+    component: () => import(/* webpackChunkName: "about" */ '../views/ItemInfo.vue')
   }
 ]
 

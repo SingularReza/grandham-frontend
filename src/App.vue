@@ -10,8 +10,8 @@
   text-align: center;
   color: #2c3e50;
   background-color: rgb(44, 40, 40);
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
 }
 
 #nav {

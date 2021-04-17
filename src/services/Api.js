@@ -12,9 +12,9 @@ export default {
     return Api.post('/library/list', listRange)
   },
   getLibraryItems (libraryData) {
-    return Api.get('/library/items', libraryData)
+    return Api.post('/library/items', libraryData)
   },
   getItemInfo (itemData) {
-    return Api.get('/item/info', itemData)
+    return Api.post('/item/info', itemData)
   }
 }
