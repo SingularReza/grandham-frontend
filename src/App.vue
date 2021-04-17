@@ -1,8 +1,4 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
   <router-view/>
 </template>
 
@@ -13,11 +9,16 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  background-color: rgb(44, 40, 40);
+  width: 100vw;
+  height: 100vh;
 }
 
 #nav {
   padding: 30px;
 }
+
+body { margin:0; }
 
 #nav a {
   font-weight: bold;
