@@ -42,8 +42,9 @@ export default {
 <style scoped>
 .libraries {
   display: grid;
-  grid-gap: 20px 40px;
+  grid-gap: 30px 40px;
   grid-template-columns: auto auto auto;
   justify-content: center;
+  padding: 40px;
 }
 </style>

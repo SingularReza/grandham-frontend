@@ -1,7 +1,9 @@
 <template>
   <div class="item-card" @click="goToMedia">
     <img :src="'http://127.0.0.1:8000/image/'+posterpath"/>
-    {{name}}
+    <div class="media-info">
+      <div class="name-wrapper">{{name}}</div>
+    </div>
   </div>
 </template>
 
@@ -22,7 +24,7 @@ export default {
   },
   methods: {
     goToMedia () {
-      console.log(this.$route.params.type)
+      console.log('first id', this.id)
       this.$router.push({
         name: 'ItemInfo',
         params: {
@@ -40,11 +42,30 @@ export default {
 .item-card {
   width: 175px;
   height: 250px;
-  background-color: rgba(82, 74, 74, 0.685);
   margin: 10px;
+  border: .5px solid black;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
 }
 
 img {
-  height:100%;
+  width:100%;
+}
+
+.media-info {
+  background-color:  rgba(82, 74, 74, 0.95);
+  position: relative;
+  height: 60px;
+  bottom: 80px;
+  width: 156px;
+  padding: 10px;
+  font-size: small;
+  color: whitesmoke;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 </style>

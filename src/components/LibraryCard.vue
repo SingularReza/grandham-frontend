@@ -1,17 +1,17 @@
 <template>
   <div class="library-card">
       <div class="library" v-if="showForm==1||id>0" @click="goToLibrary">
-        {{name}}
-        {{type}}
+        <h3>{{name}}</h3>
+        <h6>{{type}}</h6>
       </div>
       <div class="add-library" v-else-if="showForm==2">
-        <button @click="showForm=3">+</button>
+        <img src="../assets/plus-icon.png" @click="showForm=3"/>
       </div>
-       <div class="library-form" v-if="showForm==3">
+       <div class="library-form" v-if="showForm==3" @click="showForm=2">
           <input v-model="libraryInfo.name" placeholder="name" />
           <input v-model="libraryInfo.type" placeholder="type" />
           <textarea v-model="libraryInfo.folderids" placeholder="folders"></textarea>
-          <button @click="addLibrary(libraryInfo)"></button>
+          <button @click="addLibrary(libraryInfo)">Create</button>
         </div>
   </div>
 </template>
@@ -29,8 +29,8 @@ export default {
   data () {
     return {
       libraryInfo: {
-        name: 'name',
-        type: 'type',
+        name: '',
+        type: '',
         folderids: []
       },
       showForm: 2
@@ -64,7 +64,80 @@ export default {
 .library-card {
   height: 250px;
   width:350px;
-  background-color: rgba(82, 74, 74, 0.685);
   margin: 10px;
+  background-image: url('../assets/animelibrary.jpg');
+  background-size: cover;
+  border: .5px solid black;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.library {
+  background-color: rgb(82, 74, 74);
+  color: whitesmoke;
+  height: 70px;
+  position: relative;
+  top: 180px;
+}
+
+.library-form {
+  background-color: rgb(82, 74, 74);
+  height: 250px;
+  padding: 20px;
+  text-align:center;
+}
+
+h3, h6 {
+  margin: 0px;
+  text-align: left;
+  padding-left: 15px;
+  padding-bottom: 3px;
+}
+
+h3 {
+  padding-top: 15px;
+}
+
+.add-library {
+  height: 250px;
+  width: 350px;
+  background-color: rgb(82, 74, 74);
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20%;
+  position: relative;
+  top: 35%;
+}
+
+input, textarea {
+  display: inline-block;
+  border: none;
+  border-radius: 4px;
+  height: 30px;
+  width: 70%;
+  padding: 5px;
+  background-color:rgba(44, 40, 40, 0.5);
+  color:aliceblue;
+  margin: 5px;
+}
+
+textarea {
+  height: 50px;
+}
+
+button {
+  border: none;
+  border-radius: 4px;
+  background-color:rgba(44, 40, 40, 1);
+  width: 50%;
+  height: 30px;
+  margin-top: 5px;
+  color:aliceblue;
+  cursor: pointer;
 }
 </style>

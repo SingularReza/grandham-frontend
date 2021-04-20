@@ -16,5 +16,8 @@ export default {
   },
   getItemInfo (itemData) {
     return Api.post('/item/info', itemData)
+  },
+  getAccessToken () {
+    return Api.get('/creds/token')
   }
 }
